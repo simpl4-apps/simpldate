@@ -627,7 +627,7 @@
             "multiinstance_variable": "",
             "multiinstance_condition": "",
             "isforcompensation": "false",
-            "script": "gvars.votes=[:];\ngvars.subject = \"Hallo ${part.name}\";\ngvars.body = \"\"\"\nHallo ${part.name}\n\n${your_name} (${email}) hat Sie zur Termin-Umfrage ${title} eingeladen\nJetzt teilnehmen\nhttp://${hostname}/repo/simpldate/vote.html?key=${businessKey}&name=${part.name}\n\"\"\";\n\n\n",
+            "script": "gvars.votes=[:];\ngvars.subject = \"Hallo ${part.name}\";\n\nthis.url = \"http://${hostname}/repo/simpldate/vote.html?key=${businessKey}&name=\" + URLEncoder.encode(part.name, \"UTF-8\");\ngvars.body = \"\"\"\nHallo ${part.name}\n\n${your_name} (${email}) hat Sie zur Termin-Umfrage ${title} eingeladen\nJetzt teilnehmen\n${this.url}\n\"\"\";\n\n\n//assign1='Hello'; //unbound\n//def assign3=\"Hello3\";//bound",
             "tasktype": "Script"
           },
           "stencil": {
