@@ -1,24 +1,36 @@
 <div>
   <dom-module id="simpldate-vote">
     <style>
-      paper-card.vote {
+      div.vote {
         pointer-events: all;
       }
       table.overview {
         margin-bottom: 50px;
       }
+      .vote label {
+        font-size: 12px;
+        font-weight: 400;
+      }
+      .vote paper-item {
+        font-size: 13px;
+        font-weight: 500;
+      }
 			@media screen and (min-width: 840px) {
 				.vote /deep/ paper-material {
 					padding: 20px;
 				}
-				paper-card.vote {
+				div.vote {
 					margin: 100px;
 				}
+				.vote paper-item {
+					font-size: 15px;
+					font-weight: 600;
+				}
+				.vote label {
+					font-size: 14px;
+					font-weight: 400;
+				}
 			}
-      .vote paper-item {
-        font-size: 15px;
-        font-weight: 600;
-      }
       paper-button[affirmative] {
         color: #4285f4;
       }
@@ -37,7 +49,7 @@
 
     <template>
       <simpl-panel heading="" collapsable>
-        <paper-card class="vote">
+        <div class="vote">
           <table class="overview">
             <tr>
               <td>
@@ -121,7 +133,7 @@
             <paper-button on-tap="saveVote" icon="check" class="button" raised>
               <iron-icon icon="check"></iron-icon>[[tr("save")]]</paper-button>
           </template>
-        </paper-card>
+        </div>
       </simpl-panel>
 
       <paper-dialog with-backdrop id="error">
