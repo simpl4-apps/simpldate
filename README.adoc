@@ -6,10 +6,13 @@
 
 === Overview ===
 
---
-[role=border]
-image::http://simpldate.ms123.org/repo/simpldate/web/images/simpldate_overview.svg[align="center", scaledWidth=50%]
---
+
+==== The main aspects ====
+
+* Process (with sub-process and message events,   camel and activiti playing together)
+* Camel (creating a rpc api)
+* Form (embed in website)
+* Webapp (Basic staffolding)
 
 
 Main character: In this process, no usertasks will be used.
@@ -20,13 +23,13 @@ Therefore the used Forms are designed as web pages.
 * InitiateForm(initiate.form) starts the process.
 * The voting page communicates with the process via rpc (final a message is sent to the  process)
 
+--
+[role=border]
+image::http://simpldate.ms123.org/repo/simpldate/web/images/simpldate_overview.svg[align="center", scaledWidth=50%]
+--
 
 === RPC ===
 
---
-[role=border]
-image::http://simpldate.ms123.org/repo/simpldate/web/images/camel.svg[align="center"]
---
 
 The application requires four rpc`s to interact with the process at the moment.
 The fourth, finish the  process is not ready.
@@ -36,6 +39,10 @@ The Camel component "workflow" implements the  "rpc's".
 * Messageevents are sent to the processs.
 * Read variables(state) from the process.
 
+--
+[role=border]
+image::http://simpldate.ms123.org/repo/simpldate/web/images/camel.svg[align="center"]
+--
 
 === WEB ===
 
