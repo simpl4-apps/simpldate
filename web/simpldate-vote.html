@@ -2,15 +2,19 @@
   <dom-module id="simpldate-vote">
     <style>
       paper-card.vote {
-        margin: 100px;
         pointer-events: all;
       }
       table.overview {
         margin-bottom: 50px;
       }
-      .vote /deep/ paper-material {
-        padding: 20px;
-      }
+			@media screen and (min-width: 840px) {
+				.vote /deep/ paper-material {
+					padding: 20px;
+				}
+				paper-card.vote {
+					margin: 100px;
+				}
+			}
       .vote paper-item {
         font-size: 15px;
         font-weight: 600;
