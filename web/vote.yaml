@@ -1,0 +1,4 @@
+- name: Vote
+  icon: check
+  url: simpldate-vote.html
+  hash: 0

@@ -1,0 +1,911 @@
+[sw]
+	type = sw.process
+--
+{
+  "resourceId": "oryx_00021826-686D-4B69-950C-3703E7DB1E2B",
+  "properties": {
+    "overrideid": "",
+    "name": "simpldate.process",
+    "documentation": null,
+    "version": "",
+    "author": "",
+    "language": "English",
+    "targetnamespace": "simpldate",
+    "creationdate": null,
+    "modificationdate": null,
+    "signaldefinitions": [
+      {
+        "id": "votesignal",
+        "name": "votesignal",
+        "scope": "global"
+      }
+    ],
+    "messagedefinitions": [
+      {
+        "id": "votemessage",
+        "name": "votemessage"
+      }
+    ],
+    "orientation": "horizontal",
+    "startablegroups": null,
+    "startableusers": null,
+    "initialparameter": null
+  },
+  "stencil": {
+    "id": "BPMNDiagram"
+  },
+  "childShapes": [
+    {
+      "resourceId": "oryx_58DB3679-0784-4CB2-9A83-25AAC1FE0C8E",
+      "properties": {
+        "overrideid": "",
+        "name": "",
+        "documentation": null,
+        "bgcolor": "#ffffff",
+        "bordercolor": "#000000"
+      },
+      "stencil": {
+        "id": "EndNoneEvent"
+      },
+      "childShapes": [],
+      "outgoing": [],
+      "bounds": {
+        "lowerRight": {
+          "x": 377,
+          "y": 926
+        },
+        "upperLeft": {
+          "x": 349,
+          "y": 898
+        }
+      },
+      "dockers": []
+    },
+    {
+      "resourceId": "oryx_DAC2CFC9-1DA0-4DC8-B2C3-69763213721F",
+      "properties": {
+        "overrideid": "",
+        "name": "",
+        "documentation": null,
+        "bgcolor": "#ffffff",
+        "bordercolor": "#000000",
+        "defaultflow": "None",
+        "conditionalflow": "None",
+        "conditionsequenceflow": null,
+        "showdiamondmarker": false
+      },
+      "stencil": {
+        "id": "SequenceFlow"
+      },
+      "childShapes": [],
+      "outgoing": [
+        {
+          "resourceId": "oryx_C3FB4B43-3540-4685-9268-39CB208B586A"
+        }
+      ],
+      "bounds": {
+        "lowerRight": {
+          "x": 363.8618825942078,
+          "y": 657.3867970640066
+        },
+        "upperLeft": {
+          "x": 363.8618825942078,
+          "y": 598.9420487998372
+        }
+      },
+      "dockers": [
+        {
+          "x": 15.861882594207827,
+          "y": 26
+        },
+        {
+          "x": 50.86188259420783,
+          "y": 20.09704106319225
+        }
+      ],
+      "target": {
+        "resourceId": "oryx_C3FB4B43-3540-4685-9268-39CB208B586A"
+      }
+    },
+    {
+      "resourceId": "oryx_C3FB4B43-3540-4685-9268-39CB208B586A",
+      "properties": {
+        "overrideid": "",
+        "name": "Count vote",
+        "documentation": null,
+        "bgcolor": "#ffffff",
+        "bordercolor": "#000000",
+        "asynchronousdefinition": "No",
+        "exclusivedefinition": "Yes",
+        "multiinstance_type": "None",
+        "multiinstance_cardinality": "",
+        "multiinstance_collection": "",
+        "multiinstance_variable": "",
+        "multiinstance_condition": "",
+        "isforcompensation": "false",
+        "script": "println(\"vote(\"+name+\"):\"+vote);\ngvars.ready=false;\nvotes[name] = vote;",
+        "tasktype": "Script"
+      },
+      "stencil": {
+        "id": "ScriptTask"
+      },
+      "childShapes": [],
+      "outgoing": [
+        {
+          "resourceId": "oryx_F03DFEBB-A549-43A1-9C16-BCD8AA4E5A3C"
+        }
+      ],
+      "bounds": {
+        "lowerRight": {
+          "x": 413,
+          "y": 738
+        },
+        "upperLeft": {
+          "x": 313,
+          "y": 658
+        }
+      },
+      "dockers": []
+    },
+    {
+      "resourceId": "oryx_F03DFEBB-A549-43A1-9C16-BCD8AA4E5A3C",
+      "properties": {
+        "overrideid": "",
+        "name": "",
+        "documentation": null,
+        "bgcolor": "#ffffff",
+        "bordercolor": "#000000",
+        "defaultflow": "None",
+        "conditionalflow": "None",
+        "conditionsequenceflow": null,
+        "showdiamondmarker": false
+      },
+      "stencil": {
+        "id": "SequenceFlow"
+      },
+      "childShapes": [],
+      "outgoing": [
+        {
+          "resourceId": "oryx_98952BD3-7AFC-4D04-B82E-F0AFE1EE214E"
+        }
+      ],
+      "bounds": {
+        "lowerRight": {
+          "x": 363.4180436104973,
+          "y": 807.1093823397997
+        },
+        "upperLeft": {
+          "x": 363.1561751395027,
+          "y": 738.7617114102003
+        }
+      },
+      "dockers": [
+        {
+          "x": 50,
+          "y": 40
+        },
+        {
+          "x": 20.5,
+          "y": 20.5
+        }
+      ],
+      "target": {
+        "resourceId": "oryx_98952BD3-7AFC-4D04-B82E-F0AFE1EE214E"
+      }
+    },
+    {
+      "resourceId": "oryx_3119EE6D-E1CA-424F-9D34-564F824E0710",
+      "properties": {
+        "overrideid": "",
+        "name": "",
+        "documentation": null,
+        "formkey": null,
+        "bgcolor": "#ffffff",
+        "bordercolor": "#000000",
+        "processid": "",
+        "initiator": "initiator"
+      },
+      "stencil": {
+        "id": "StartNoneEvent"
+      },
+      "childShapes": [],
+      "outgoing": [
+        {
+          "resourceId": "oryx_CC10B234-80F5-44FC-8901-8282EB51F79A"
+        }
+      ],
+      "bounds": {
+        "lowerRight": {
+          "x": 378,
+          "y": 85
+        },
+        "upperLeft": {
+          "x": 348,
+          "y": 55
+        }
+      },
+      "dockers": []
+    },
+    {
+      "resourceId": "oryx_27D1A7C4-3498-4366-A9B0-08EBC3C1D5AE",
+      "properties": {
+        "overrideid": "",
+        "name": "",
+        "documentation": null,
+        "bgcolor": "#ffffff",
+        "bordercolor": "#000000",
+        "defaultflow": "None",
+        "conditionalflow": "None",
+        "conditionsequenceflow": null,
+        "showdiamondmarker": false
+      },
+      "stencil": {
+        "id": "SequenceFlow"
+      },
+      "childShapes": [],
+      "outgoing": [
+        {
+          "resourceId": "oryx_349EB5AA-240B-4F81-9143-665104B25DF1"
+        }
+      ],
+      "bounds": {
+        "lowerRight": {
+          "x": 363,
+          "y": 567.8720355731225
+        },
+        "upperLeft": {
+          "x": 363,
+          "y": 494.9938241106719
+        }
+      },
+      "dockers": [
+        {
+          "x": 111.5,
+          "y": 357.58102766798413
+        },
+        {
+          "x": 15,
+          "y": 15
+        }
+      ],
+      "target": {
+        "resourceId": "oryx_349EB5AA-240B-4F81-9143-665104B25DF1"
+      }
+    },
+    {
+      "resourceId": "oryx_98952BD3-7AFC-4D04-B82E-F0AFE1EE214E",
+      "properties": {
+        "overrideid": "",
+        "name": "",
+        "documentation": null,
+        "bgcolor": "#ffffff",
+        "bordercolor": "#000000",
+        "processid": "",
+        "gatewaytype": "XOR",
+        "xortype": "Data",
+        "markervisible": "true"
+      },
+      "stencil": {
+        "id": "ExclusiveGateway"
+      },
+      "childShapes": [],
+      "outgoing": [
+        {
+          "resourceId": "oryx_E6CFCED4-ACC1-44F8-AF95-9070A89C61AF"
+        },
+        {
+          "resourceId": "oryx_D97F6068-7F1A-44F5-B5E0-2112EAE58917"
+        }
+      ],
+      "bounds": {
+        "lowerRight": {
+          "x": 383,
+          "y": 848
+        },
+        "upperLeft": {
+          "x": 343,
+          "y": 808
+        }
+      },
+      "dockers": []
+    },
+    {
+      "resourceId": "oryx_E6CFCED4-ACC1-44F8-AF95-9070A89C61AF",
+      "properties": {
+        "overrideid": "",
+        "name": "",
+        "documentation": null,
+        "bgcolor": "#ffffff",
+        "bordercolor": "#000000",
+        "defaultflow": "None",
+        "conditionalflow": "Conditional",
+        "conditionsequenceflow": "${ready == true}"
+      },
+      "stencil": {
+        "id": "SequenceFlow"
+      },
+      "childShapes": [],
+      "outgoing": [
+        {
+          "resourceId": "oryx_58DB3679-0784-4CB2-9A83-25AAC1FE0C8E"
+        }
+      ],
+      "bounds": {
+        "lowerRight": {
+          "x": 363.3807308333996,
+          "y": 897.9531429277333
+        },
+        "upperLeft": {
+          "x": 363.0841129166004,
+          "y": 848.4179508222667
+        }
+      },
+      "dockers": [
+        {
+          "x": 20.5,
+          "y": 20.5
+        },
+        {
+          "x": 14,
+          "y": 14
+        }
+      ],
+      "target": {
+        "resourceId": "oryx_58DB3679-0784-4CB2-9A83-25AAC1FE0C8E"
+      }
+    },
+    {
+      "resourceId": "oryx_D97F6068-7F1A-44F5-B5E0-2112EAE58917",
+      "properties": {
+        "overrideid": "",
+        "name": "",
+        "documentation": null,
+        "bgcolor": "#ffffff",
+        "bordercolor": "#000000",
+        "defaultflow": "None",
+        "conditionalflow": "None",
+        "conditionsequenceflow": null
+      },
+      "stencil": {
+        "id": "SequenceFlow"
+      },
+      "childShapes": [],
+      "outgoing": [
+        {
+          "resourceId": "oryx_349EB5AA-240B-4F81-9143-665104B25DF1"
+        }
+      ],
+      "bounds": {
+        "lowerRight": {
+          "x": 490,
+          "y": 828.5
+        },
+        "upperLeft": {
+          "x": 378.8828125,
+          "y": 583
+        }
+      },
+      "dockers": [
+        {
+          "x": 20.5,
+          "y": 20.5
+        },
+        {
+          "x": 490,
+          "y": 828.5
+        },
+        {
+          "x": 490,
+          "y": 583
+        },
+        {
+          "x": 15,
+          "y": 15
+        }
+      ],
+      "target": {
+        "resourceId": "oryx_349EB5AA-240B-4F81-9143-665104B25DF1"
+      }
+    },
+    {
+      "resourceId": "oryx_349EB5AA-240B-4F81-9143-665104B25DF1",
+      "properties": {
+        "overrideid": "",
+        "name": "",
+        "documentation": null,
+        "bgcolor": "rgb(255,130,102)",
+        "bordercolor": "#000000",
+        "messageref": "votemessage"
+      },
+      "stencil": {
+        "id": "CatchMessageEvent"
+      },
+      "childShapes": [],
+      "outgoing": [
+        {
+          "resourceId": "oryx_DAC2CFC9-1DA0-4DC8-B2C3-69763213721F"
+        }
+      ],
+      "bounds": {
+        "lowerRight": {
+          "x": 378,
+          "y": 598
+        },
+        "upperLeft": {
+          "x": 348,
+          "y": 568
+        }
+      },
+      "dockers": [
+        {
+          "x": 363,
+          "y": 583
+        }
+      ]
+    },
+    {
+      "resourceId": "oryx_CC10B234-80F5-44FC-8901-8282EB51F79A",
+      "properties": {
+        "overrideid": "",
+        "name": "",
+        "documentation": null,
+        "bgcolor": "#ffffff",
+        "bordercolor": "#000000",
+        "defaultflow": "None",
+        "conditionalflow": "None",
+        "conditionsequenceflow": null,
+        "showdiamondmarker": false
+      },
+      "stencil": {
+        "id": "SequenceFlow"
+      },
+      "childShapes": [],
+      "outgoing": [
+        {
+          "resourceId": "oryx_59E89AA1-B797-4533-873A-B777BCC0BDA7"
+        }
+      ],
+      "bounds": {
+        "lowerRight": {
+          "x": 363,
+          "y": 135
+        },
+        "upperLeft": {
+          "x": 363,
+          "y": 85.4375
+        }
+      },
+      "dockers": [
+        {
+          "x": 15,
+          "y": 15
+        },
+        {
+          "x": 111.5,
+          "y": 1
+        }
+      ],
+      "target": {
+        "resourceId": "oryx_59E89AA1-B797-4533-873A-B777BCC0BDA7"
+      }
+    },
+    {
+      "resourceId": "oryx_6BA1E960-4EEE-4B1D-968D-F5CDFB68E92E",
+      "properties": {
+        "overrideid": "",
+        "name": "",
+        "documentation": null,
+        "bgcolor": "#ffffff",
+        "bordercolor": "#000000",
+        "text": "receiving the  votes"
+      },
+      "stencil": {
+        "id": "TextAnnotation"
+      },
+      "childShapes": [],
+      "outgoing": [],
+      "bounds": {
+        "lowerRight": {
+          "x": 338,
+          "y": 604
+        },
+        "upperLeft": {
+          "x": 238,
+          "y": 554
+        }
+      },
+      "dockers": []
+    },
+    {
+      "resourceId": "oryx_3A005436-487E-4C2D-8028-4D3792E8C7D2",
+      "properties": {
+        "overrideid": "",
+        "name": "",
+        "documentation": null,
+        "bgcolor": "#ffffff",
+        "bordercolor": "#000000",
+        "text": "Start with  initial data "
+      },
+      "stencil": {
+        "id": "TextAnnotation"
+      },
+      "childShapes": [],
+      "outgoing": [],
+      "bounds": {
+        "lowerRight": {
+          "x": 370,
+          "y": 95
+        },
+        "upperLeft": {
+          "x": 270,
+          "y": 45
+        }
+      },
+      "dockers": []
+    },
+    {
+      "resourceId": "oryx_B5594B46-76CB-4D7F-A449-098D24271E0C",
+      "properties": {
+        "overrideid": "",
+        "name": "",
+        "documentation": null,
+        "bgcolor": "#ffffff",
+        "bordercolor": "#000000",
+        "defaultflow": "None",
+        "conditionalflow": "None",
+        "conditionsequenceflow": null,
+        "showdiamondmarker": false
+      },
+      "stencil": {
+        "id": "SequenceFlow"
+      },
+      "childShapes": [],
+      "outgoing": [
+        {
+          "resourceId": "oryx_0076467C-B61F-4066-8D32-A1EC139D0348"
+        }
+      ],
+      "bounds": {
+        "lowerRight": {
+          "x": 365.0113355118819,
+          "y": 329.62409666923963
+        },
+        "upperLeft": {
+          "x": 364.7152269881181,
+          "y": 305.15812989326037
+        }
+      },
+      "dockers": [
+        {
+          "x": 50,
+          "y": 62.375
+        },
+        {
+          "x": 50,
+          "y": 40
+        }
+      ],
+      "target": {
+        "resourceId": "oryx_0076467C-B61F-4066-8D32-A1EC139D0348"
+      }
+    },
+    {
+      "resourceId": "oryx_59E89AA1-B797-4533-873A-B777BCC0BDA7",
+      "properties": {
+        "overrideid": "",
+        "name": "Send email to all participant",
+        "documentation": null,
+        "bgcolor": "red",
+        "bordercolor": "#000000",
+        "asynchronousdefinition": "No",
+        "exclusivedefinition": "Yes",
+        "multiinstance_type": "Sequential",
+        "multiinstance_cardinality": "",
+        "multiinstance_collection": "participants",
+        "multiinstance_variable": "part",
+        "multiinstance_condition": "",
+        "isforcompensation": "false",
+        "istransaction": false
+      },
+      "stencil": {
+        "id": "SubProcess"
+      },
+      "childShapes": [
+        {
+          "resourceId": "oryx_EC4AD3F5-DE2F-4531-B70A-2FE173824132",
+          "properties": {
+            "overrideid": "",
+            "name": "Prepare email",
+            "documentation": null,
+            "bgcolor": "#ffffff",
+            "bordercolor": "#000000",
+            "asynchronousdefinition": "No",
+            "exclusivedefinition": "Yes",
+            "multiinstance_type": "None",
+            "multiinstance_cardinality": "",
+            "multiinstance_collection": "",
+            "multiinstance_variable": "",
+            "multiinstance_condition": "",
+            "isforcompensation": "false",
+            "script": "gvars.votes=[:];\ngvars.subject = \"Hallo ${part.name}\";\ngvars.body = \"\"\"\nHallo ${part.name}\n\n${your_name} (${email}) hat Sie zur Termin-Umfrage ${title} eingeladen\nJetzt teilnehmen\nhttp://${hostname}/repo/simpldate/vote.html?key=${businessKey}&name=${part.name}\n\"\"\";\n\n\n",
+            "tasktype": "Script"
+          },
+          "stencil": {
+            "id": "ScriptTask"
+          },
+          "childShapes": [],
+          "outgoing": [
+            {
+              "resourceId": "oryx_B5594B46-76CB-4D7F-A449-098D24271E0C"
+            }
+          ],
+          "bounds": {
+            "lowerRight": {
+              "x": 163,
+              "y": 170
+            },
+            "upperLeft": {
+              "x": 63,
+              "y": 90
+            }
+          },
+          "dockers": []
+        },
+        {
+          "resourceId": "oryx_0076467C-B61F-4066-8D32-A1EC139D0348",
+          "properties": {
+            "overrideid": "",
+            "name": "Send email",
+            "documentation": null,
+            "bgcolor": "#ffffff",
+            "bordercolor": "#000000",
+            "multiinstance_type": "None",
+            "multiinstance_cardinality": "",
+            "multiinstance_collection": "participants",
+            "multiinstance_variable": "part",
+            "multiinstance_condition": "",
+            "isforcompensation": "false",
+            "type": "mail",
+            "to": "${part.email}",
+            "cc": "",
+            "bcc": "",
+            "from": "manfred@ms123.org",
+            "subject": "${subject}",
+            "attachment": "",
+            "text": "${body}",
+            "tasktype": "Send"
+          },
+          "stencil": {
+            "id": "MailTask"
+          },
+          "childShapes": [],
+          "outgoing": [
+            {
+              "resourceId": "oryx_7D580787-0A68-433A-8B06-0E3AB024BD9B"
+            }
+          ],
+          "bounds": {
+            "lowerRight": {
+              "x": 164,
+              "y": 275
+            },
+            "upperLeft": {
+              "x": 64,
+              "y": 195
+            }
+          },
+          "dockers": []
+        },
+        {
+          "resourceId": "oryx_04C73896-A36A-48D9-9204-D968922ABAD8",
+          "properties": {
+            "overrideid": "",
+            "name": "",
+            "documentation": null,
+            "formkey": null,
+            "bgcolor": "#ffffff",
+            "bordercolor": "#000000",
+            "processid": "",
+            "initiator": "initiator"
+          },
+          "stencil": {
+            "id": "StartNoneEvent"
+          },
+          "childShapes": [],
+          "outgoing": [
+            {
+              "resourceId": "oryx_84759944-5018-41AC-A573-2C97EA3B4D42"
+            }
+          ],
+          "bounds": {
+            "lowerRight": {
+              "x": 128,
+              "y": 60
+            },
+            "upperLeft": {
+              "x": 98,
+              "y": 30
+            }
+          },
+          "dockers": []
+        },
+        {
+          "resourceId": "oryx_CE002975-73D3-4393-85E0-C026F12E9CA7",
+          "properties": {
+            "overrideid": "",
+            "name": "",
+            "documentation": null,
+            "bgcolor": "#ffffff",
+            "bordercolor": "#000000"
+          },
+          "stencil": {
+            "id": "EndNoneEvent"
+          },
+          "childShapes": [],
+          "outgoing": [],
+          "bounds": {
+            "lowerRight": {
+              "x": 125.5,
+              "y": 328
+            },
+            "upperLeft": {
+              "x": 97.5,
+              "y": 300
+            }
+          },
+          "dockers": []
+        }
+      ],
+      "outgoing": [
+        {
+          "resourceId": "oryx_27D1A7C4-3498-4366-A9B0-08EBC3C1D5AE"
+        }
+      ],
+      "bounds": {
+        "lowerRight": {
+          "x": 474.5,
+          "y": 494
+        },
+        "upperLeft": {
+          "x": 251.5,
+          "y": 135
+        }
+      },
+      "dockers": []
+    },
+    {
+      "resourceId": "oryx_84759944-5018-41AC-A573-2C97EA3B4D42",
+      "properties": {
+        "overrideid": "",
+        "name": "",
+        "documentation": null,
+        "bgcolor": "#ffffff",
+        "bordercolor": "#000000",
+        "defaultflow": "None",
+        "conditionalflow": "None",
+        "conditionsequenceflow": null,
+        "showdiamondmarker": false
+      },
+      "stencil": {
+        "id": "SequenceFlow"
+      },
+      "childShapes": [],
+      "outgoing": [
+        {
+          "resourceId": "oryx_EC4AD3F5-DE2F-4531-B70A-2FE173824132"
+        }
+      ],
+      "bounds": {
+        "lowerRight": {
+          "x": 364.5,
+          "y": 224.15625
+        },
+        "upperLeft": {
+          "x": 364.5,
+          "y": 195.609375
+        }
+      },
+      "dockers": [
+        {
+          "x": 15,
+          "y": 15
+        },
+        {
+          "x": 50,
+          "y": 40
+        }
+      ],
+      "target": {
+        "resourceId": "oryx_EC4AD3F5-DE2F-4531-B70A-2FE173824132"
+      }
+    },
+    {
+      "resourceId": "oryx_7D580787-0A68-433A-8B06-0E3AB024BD9B",
+      "properties": {
+        "overrideid": "",
+        "name": "",
+        "documentation": null,
+        "bgcolor": "#ffffff",
+        "bordercolor": "#000000",
+        "defaultflow": "None",
+        "conditionalflow": "None",
+        "conditionsequenceflow": null
+      },
+      "stencil": {
+        "id": "SequenceFlow"
+      },
+      "childShapes": [],
+      "outgoing": [
+        {
+          "resourceId": "oryx_CE002975-73D3-4393-85E0-C026F12E9CA7"
+        }
+      ],
+      "bounds": {
+        "lowerRight": {
+          "x": 364.2183702640908,
+          "y": 434.42237534526953
+        },
+        "upperLeft": {
+          "x": 363.4613172359092,
+          "y": 410.49949965473047
+        }
+      },
+      "dockers": [
+        {
+          "x": 50,
+          "y": 40
+        },
+        {
+          "x": 14,
+          "y": 14
+        }
+      ],
+      "target": {
+        "resourceId": "oryx_CE002975-73D3-4393-85E0-C026F12E9CA7"
+      }
+    },
+    {
+      "resourceId": "oryx_333197C9-3E1F-4893-BB07-9572D78BAC9C",
+      "properties": {
+        "overrideid": "",
+        "name": "",
+        "documentation": null,
+        "bgcolor": "#ffffff",
+        "bordercolor": "#000000",
+        "text": "is voting ready?"
+      },
+      "stencil": {
+        "id": "TextAnnotation"
+      },
+      "childShapes": [],
+      "outgoing": [],
+      "bounds": {
+        "lowerRight": {
+          "x": 325,
+          "y": 853
+        },
+        "upperLeft": {
+          "x": 225,
+          "y": 803
+        }
+      },
+      "dockers": []
+    }
+  ],
+  "bounds": {
+    "lowerRight": {
+      "x": 2485,
+      "y": 3050
+    },
+    "upperLeft": {
+      "x": 0,
+      "y": 0
+    }
+  },
+  "stencilset": {
+    "url": "process",
+    "namespace": "http://b3mn.org/stencilset/bpmn2.0#"
+  },
+  "ssextensions": [],
+  "zoomLevel": 1
+}

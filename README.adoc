@@ -1,0 +1,45 @@
+:linkattrs:
+:source-highlighter: rouge
+
+
+==== simpldate ====
+
+=== Overview ===
+
+--
+[role=border]
+image::http://simpldate.ms123.org/repo/simpldate/web/images/simpldate_overview.svg[align="center", scaledWidth=50%]
+--
+
+
+Main character: In this process, no usertasks will be used.
+That's not possible, because an unknown number of participants are involved,
+which also no users in simpl4 are.
+Therefore the used Forms are designed as web pages.
+
+* InitiateForm(initiate.form) starts the process.
+* The voting page communicates with the process via rpc (final a message is sent to the  process)
+
+
+=== RPC ===
+
+--
+[role=border]
+image::http://simpldate.ms123.org/repo/simpldate/web/images/camel.svg[align="center"]
+--
+
+The application requires four rpc`s to interact with the process at the moment.
+The fourth, finish the  process is not ready.
+The Camel component "workflow" implements the  "rpc's".
+
+* Starts the process.
+* Messageevents are sent to the processs.
+* Read variables(state) from the process.
+
+
+=== WEB ===
+
+The web pages are implemented as  html5 customelements.
+
+* simpldate-initiate
+* simpldate-vote

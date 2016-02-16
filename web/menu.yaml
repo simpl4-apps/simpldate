@@ -1,0 +1,4 @@
+- name: initiate_vote
+  icon: event
+  url: simpldate-initiate.html
+  hash: 0

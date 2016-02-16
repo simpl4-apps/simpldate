@@ -1,0 +1,210 @@
+<div>
+  <dom-module id="simpldate-vote">
+    <style>
+      paper-card.vote {
+        margin: 100px;
+        pointer-events: all;
+      }
+      table.overview {
+        margin-bottom: 50px;
+      }
+      .vote /deep/ paper-material {
+        padding: 20px;
+      }
+      .vote paper-item {
+        font-size: 15px;
+        font-weight: 600;
+      }
+      paper-button[affirmative] {
+        color: #4285f4;
+      }
+      iron-icon.error-big {
+        color: #ff5252;
+        height: 64px;
+        width: 64px;
+      }
+      paper-dialog {
+        min-height: 250px;
+        min-width: 300px;
+        color: #727272 !important;
+      }
+
+    </style>
+
+    <template>
+      <simpl-panel heading="" collapsable>
+        <paper-card class="vote">
+          <table class="overview">
+            <tr>
+              <td>
+                <label>[[tr("title")]]</label>
+              </td>
+              <td>
+                <paper-item>[[title]]</paper-item>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label>[[tr("description")]]</label>
+              </td>
+              <td>
+                <paper-item>[[description]]</paper-item>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label>[[tr("from")]]</label>
+              </td>
+              <td>
+                <paper-item>[[your_name]]</paper-item>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label>[[tr("location")]]</label>
+              </td>
+              <td>
+                <paper-item>[[location]]</paper-item>
+              </td>
+            </tr>
+          </table>
+          <table cellpadding="5">
+            <thead>
+              <tr>
+                <th>&#160;</th>
+                <template is="dom-repeat" as="date" items="[[dates]]">
+                  <th>
+                    <div>[[getDate(date.date)]]</div>
+                    <div>[[getTime(date.date)]]</div>
+                  </th>
+                </template>
+              </tr>
+            </thead>
+            <tbody>
+              <template is="dom-repeat" as="part" items="[[participants]]">
+                <tr>
+                  <td>[[part.name]]</td>
+                  <template is="dom-repeat" as="date" items="[[dates]]">
+                    <td style="text-align:center;">
+                      <template is="dom-if" if="[[isDateOk(part,date)]]">
+                        <iron-icon icon="check" />
+                      </template>
+                      <template is="dom-if" if="[[isDateNotOk(part,date)]]">
+                        <iron-icon icon="close" />
+                      </template>
+                      <template is="dom-if" if="[[isDateNotVoted(part,date)]]">
+                        <iron-icon icon="remove" />
+                      </template>
+                    </td>
+                  </template>
+                </tr>
+              </template>
+              <template is="dom-if" if="[[hasName(name)]]">
+                <tr>
+                  <td>
+                    <paper-input value="[[name]]" readonly label="Name"></paper-input>
+                  </td>
+                  <template is="dom-repeat" as="date" items="[[dates]]">
+                    <td style="text-align:center;">
+                      <paper-checkbox id="[[getCheckboxId(index)]]" on-change="onCheckStateChange"></paper-checkbox>
+                    </td>
+                  </template>
+                </tr>
+              </template>
+            </tbody>
+          </table>
+          <template is="dom-if" if="[[hasName(name)]]">
+            <paper-button on-tap="saveVote" icon="check" class="button" raised>
+              <iron-icon icon="check"></iron-icon>[[tr("save")]]</paper-button>
+          </template>
+        </paper-card>
+      </simpl-panel>
+
+      <paper-dialog with-backdrop id="error">
+        <div class="layout vertical flex">
+          <iron-icon class="error-big" icon="check"></iron-icon>
+          <p></p>
+        </div>
+        <div class="buttons">
+          <paper-button raised dialog-confirm>
+            <iron-icon affirmative icon="check"></iron-icon>Ok</paper-button>
+        </div>
+      </paper-dialog>
+    </template>
+    <script>
+      Polymer( {
+        is: 'simpldate-vote',
+        behaviors: [
+          TranslationsBehavior
+        ],
+        properties: {},
+        ready: function() {
+          var result = simpl4.util.Rpc.rpcSync( "camelRoute:simpldate.getState", {
+            businessKey: queryParams.key
+          } );
+          console.log( "getState.result:", result );
+          this.votes = result.votes || {};
+          this.dates = result.dates || [];
+          this.participants = result.participants || [];
+          this.your_name = result.your_name;
+          this.title = result.title;
+          this.location = result.location;
+          this.description = result.description;
+          this.name = queryParams.name;
+        },
+        hasName: function( name ) {
+          var b = this.isEmpty( name );
+          return !b;
+        },
+        saveVote: function() {
+          var vote = {};
+          for ( var i = 0; i < this.dates.length; i++ ) {
+            var date = this.dates[ i ];
+            var cb = document.getElementById( "cb" + i );
+            vote[ date.date ] = cb.checked;
+          }
+          var result = simpl4.util.Rpc.rpcSync( "camelRoute:simpldate.vote", {
+            vote: {
+              vote: vote
+            },
+            name: queryParams.name,
+            businessKey: queryParams.key
+          } );
+          this.$.error.querySelector( "p" ).innerHTML = tr( "vote_saved" );
+          this.$.error.open();
+        },
+        getCheckboxId: function( index ) {
+          return "cb" + index;
+        },
+        getDate: function( date ) {
+					return moment(date).format('L');
+        },
+        getTime: function( date ) {
+					return moment(date).format('LT');
+        },
+        isDateOk: function( part, date ) {
+          return this.getVote( part, date ) === true;
+        },
+        isDateNotOk: function( part, date ) {
+          return this.getVote( part, date ) === false;
+        },
+        isDateNotVoted: function( part, date ) {
+          return this.getVote( part, date ) == null;
+        },
+        getVote: function( part, date ) {
+          var partVote = this.votes[ part.name ];
+          if ( partVote ) {
+            return partVote[ date.date ];
+          } else {
+            return null;
+          }
+        },
+        isEmpty: function( a ) {
+          if ( a == null || a == "" ) return true;
+          return false;
+        }
+      } );
+    </script>
+  </dom-module>
+  <simpldate-vote/>
+</div>

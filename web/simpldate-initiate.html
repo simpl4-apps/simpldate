@@ -1,0 +1,113 @@
+<div>
+  <dom-module id="simpldate-initiate">
+    <style>
+      :host {
+        pointer-events: all;
+      }
+      paper-button[affirmative] {
+        color: #4285f4;
+      }
+      iron-icon.error-big {
+        color: #ff5252;
+        height: 64px;
+        width: 64px;
+      }
+      paper-dialog {
+        min-height: 250px;
+        min-width: 300px;
+        color: #727272 !important;
+      }
+      paper-card {
+        margin-top: 30px;
+        margin-left: 10px;
+        margin-bottom: 30px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+      .link /deep/ paper-material {
+        padding: 20px;
+      }
+
+    </style>
+    <template>
+      <simpl-panel heading="" collapsable>
+        <simpl-form on-xaction="onTap" id="initiateForm" data="" form-name="initiate.form"></simpl-form>
+
+        <template is="dom-if" if="[[initiateReady]]">
+          <paper-card class="link">
+            <div><a target="_blank" href="[[getLink()]]">[[tr("the_link_result")]]</a>
+            </div>
+          </paper-card>
+        </template>
+      </simpl-panel>
+      <paper-dialog with-backdrop id="error">
+        <div class="layout vertical flex">
+          <iron-icon class="error-big" icon="check"></iron-icon>
+          <p></p>
+        </div>
+        <div class="buttons">
+          <paper-button raised dialog-confirm>
+            <iron-icon affirmative icon="check"></iron-icon>Ok</paper-button>
+        </div>
+      </paper-dialog>
+    </template>
+    <script>
+      Polymer( {
+        is: 'simpldate-initiate',
+        behaviors: [
+          TranslationsBehavior
+        ],
+        properties: {},
+        ready: function() {
+          this.businessKey = queryParams.key || getShortId();
+          this.isWorking = false;
+          this.initiateReady = false;
+        },
+        onTap: function( e ) {
+          console.log( "onTap:", e.detail );
+          var xaction = e.detail.xaction;
+          if ( xaction == "reset" ) {
+            this.isWorking = false;
+          } else if ( xaction == "execute" && e.detail.valid === true ) {
+            if ( this.isWorking ) return;
+            var data = e.detail.data;
+            data.hostname = location.hostname;
+            data.businessKey = this.businessKey;
+            var self = this;
+            var params = {
+              service: "camelRoute",
+              method: "simpldate.initiate",
+              parameter: {
+                initiateData: e.detail.data,
+                businessKey: this.businessKey
+              },
+              async: false,
+              context: this,
+              failed: function( e ) {
+                self.isWorking = false;
+                console.error( "initiate.failed:", e );
+                self.$.error.querySelector( "p" ).innerHTML = tr( "termin_not_created" );
+                self.$.error.open();
+              },
+              completed: function( ret ) {
+                self.isWorking = false;
+                self.initiateReady = true;
+                console.log( "initiate.ret:", ret );
+                self.$.error.querySelector( "p" ).innerHTML = tr( "termin_created" );
+                self.$.error.open();
+              }
+            }
+            this.isWorking = true;
+            console.log( "rpc:", params );
+            simpl4.util.Rpc.rpcAsync( params );
+          }
+        },
+        getLink: function( e ) {
+          return "http://" + location.hostname + "/repo/simpldate/vote.html?key=" + this.businessKey;
+        }
+      } );
+
+    </script>
+  </dom-module>
+  <simpldate-initiate>
+</div>

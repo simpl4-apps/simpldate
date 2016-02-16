@@ -1,0 +1,77 @@
+[sw]
+	type = sw.messageslang
+--
+[
+    {
+        "msgstr": "Terminanfrage für",
+        "msgid": "title"
+    },
+    {
+        "msgstr": "Örtlichkeit",
+        "msgid": "location"
+    },
+    {
+        "msgstr": "Beschreibung",
+        "msgid": "description"
+    },
+    {
+        "msgstr": "Von",
+        "msgid": "from"
+    },
+    {
+        "msgstr": "Speichern",
+        "msgid": "save"
+    },
+    {
+        "msgstr": "Ihr Name",
+        "msgid": "your_name"
+    },
+    {
+        "msgstr": "Teilnehmer",
+        "msgid": "participants"
+    },
+    {
+        "msgstr": "Teilnehmer",
+        "msgid": "participant"
+    },
+    {
+        "msgstr": "Email",
+        "msgid": "email"
+    },
+    {
+        "msgstr": "Name",
+        "msgid": "name"
+    },
+    {
+        "msgstr": "Datum",
+        "msgid": "date"
+    },
+    {
+        "msgstr": "Dauer",
+        "msgid": "duration"
+    },
+    {
+        "msgstr": "Termine",
+        "msgid": "dates"
+    },
+    {
+        "msgstr": "Neuer Termin",
+        "msgid": "initiate_vote"
+    },
+    {
+        "msgstr": "Termin konnte nicht erstellt werden",
+        "msgid": "termin_not_created"
+    },
+    {
+        "msgstr": "Termin erstellt",
+        "msgid": "termin_created"
+    },
+    {
+        "msgstr": "Abstimmung gespeichert",
+        "msgid": "vote_saved"
+    },
+    {
+        "msgstr": "Der Link zum Abstimmungsergebnis",
+        "msgid": "the_link_result"
+    }
+]

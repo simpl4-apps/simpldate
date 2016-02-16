@@ -1,0 +1,496 @@
+[sw]
+	type = sw.camel
+--
+{
+  "resourceId": "oryx_8D51B44B-A8A0-43D5-B671-82CBB4543365",
+  "properties": {
+    "overrideid": "helper.camel",
+    "documentation": null,
+    "autostart": true,
+    "enabled": true,
+    "logExceptionsOnly": false,
+    "version": "",
+    "author": "",
+    "creationdate": null,
+    "modificationdate": null,
+    "rpc": false,
+    "rpcParameter": null,
+    "rpcReturn": "body",
+    "rpcReturnHeaders": null,
+    "websocket": false,
+    "recvEndpoint": "",
+    "sendEndpoint": "",
+    "startableGroups": null,
+    "startableUsers": null,
+    "settings": null
+  },
+  "stencil": {
+    "id": "Camelrouting"
+  },
+  "childShapes": [
+    {
+      "resourceId": "oryx_F05A271B-7CCA-4E57-B9BF-8ECB54476AEB",
+      "properties": {
+        "shared": "no",
+        "shareRef": "",
+        "enrich": "no",
+        "enrich_timeout": "",
+        "overrideid": "",
+        "name": "",
+        "documentation": null,
+        "bgcolor": "white",
+        "bordercolor": "#000000",
+        "caption": "",
+        "type_direct": "Direct",
+        "uri_template": "direct:${name}",
+        "urivalue_name": "initiate",
+        "rpc": true,
+        "rpcParameter": {
+          "totalCount": 2,
+          "items": [
+            {
+              "name": "initiateData",
+              "destname": null,
+              "defaultvalue": null,
+              "optional": false,
+              "type": "map",
+              "destination": "header"
+            },
+            {
+              "name": "businessKey",
+              "destname": null,
+              "defaultvalue": null,
+              "optional": false,
+              "type": "string",
+              "destination": "header"
+            }
+          ]
+        },
+        "rpcReturn": "body",
+        "mimetype": "",
+        "rpcReturnHeaders": null,
+        "startableGroups": null,
+        "startableUsers": "guest,admin"
+      },
+      "stencil": {
+        "id": "DirectEndpoint"
+      },
+      "childShapes": [],
+      "outgoing": [
+        {
+          "resourceId": "oryx_66D46A65-FEC9-482B-B5B0-3176276C204A"
+        }
+      ],
+      "bounds": {
+        "lowerRight": {
+          "x": 144,
+          "y": 368
+        },
+        "upperLeft": {
+          "x": 64,
+          "y": 308
+        }
+      },
+      "dockers": []
+    },
+    {
+      "resourceId": "oryx_7974D320-EEB6-4534-B199-E8374D6F9D66",
+      "properties": {
+        "shared": "no",
+        "shareRef": "",
+        "enrich": "no",
+        "enrich_timeout": "",
+        "overrideid": "",
+        "name": "",
+        "documentation": null,
+        "bgcolor": "white",
+        "bordercolor": "#000000",
+        "caption": "",
+        "type_activiti": "Workflow",
+        "uri_template": "activiti:${operation}",
+        "urivalue_operation": "startProcess",
+        "uriparam_namespace": "simpldate",
+        "uriparam_sendSignal": false,
+        "uriparam_signalName": "",
+        "uriparam_sendMessage": true,
+        "uriparam_messageName": "votemessage",
+        "uriparam_businessKey": "",
+        "uriparam_headerFields": "initiateData",
+        "uriparam_variableNames": "",
+        "uriparam_processCriteria": [
+          {
+            "name": "processDefinitionKey",
+            "value": "simpldate.process"
+          }
+        ],
+        "extraParams": null
+      },
+      "stencil": {
+        "id": "ActivitiEndpoint"
+      },
+      "childShapes": [],
+      "outgoing": [],
+      "bounds": {
+        "lowerRight": {
+          "x": 353.5,
+          "y": 368
+        },
+        "upperLeft": {
+          "x": 273.5,
+          "y": 308
+        }
+      },
+      "dockers": []
+    },
+    {
+      "resourceId": "oryx_66D46A65-FEC9-482B-B5B0-3176276C204A",
+      "properties": {
+        "overrideid": "",
+        "name": "",
+        "documentation": null
+      },
+      "stencil": {
+        "id": "SimpleConnection"
+      },
+      "childShapes": [],
+      "outgoing": [
+        {
+          "resourceId": "oryx_7974D320-EEB6-4534-B199-E8374D6F9D66"
+        }
+      ],
+      "bounds": {
+        "lowerRight": {
+          "x": 273.21875,
+          "y": 338
+        },
+        "upperLeft": {
+          "x": 144.28125,
+          "y": 338
+        }
+      },
+      "dockers": [
+        {
+          "x": 40,
+          "y": 30
+        },
+        {
+          "x": 40,
+          "y": 30
+        }
+      ],
+      "target": {
+        "resourceId": "oryx_7974D320-EEB6-4534-B199-E8374D6F9D66"
+      }
+    },
+    {
+      "resourceId": "oryx_2878931B-CEBD-470B-A1FD-967919CA678F",
+      "properties": {
+        "shared": "no",
+        "shareRef": "",
+        "enrich": "no",
+        "enrich_timeout": "",
+        "overrideid": "",
+        "name": "",
+        "documentation": null,
+        "bgcolor": "white",
+        "bordercolor": "#000000",
+        "caption": "",
+        "type_direct": "Direct",
+        "uri_template": "direct:${name}",
+        "urivalue_name": "vote",
+        "rpc": true,
+        "rpcParameter": {
+          "totalCount": 3,
+          "items": [
+            {
+              "name": "vote",
+              "destname": null,
+              "defaultvalue": null,
+              "optional": false,
+              "type": "map",
+              "destination": "header"
+            },
+            {
+              "name": "name",
+              "destname": null,
+              "defaultvalue": null,
+              "optional": false,
+              "type": "string",
+              "destination": "header"
+            },
+            {
+              "name": "businessKey",
+              "destname": null,
+              "defaultvalue": null,
+              "optional": false,
+              "type": "string",
+              "destination": "header"
+            }
+          ]
+        },
+        "rpcReturn": "body",
+        "mimetype": "",
+        "rpcReturnHeaders": null,
+        "startableGroups": null,
+        "startableUsers": "guest,admin"
+      },
+      "stencil": {
+        "id": "DirectEndpoint"
+      },
+      "childShapes": [],
+      "outgoing": [
+        {
+          "resourceId": "oryx_ED93319E-81EF-413A-80C2-79D9CD64A010"
+        }
+      ],
+      "bounds": {
+        "lowerRight": {
+          "x": 144,
+          "y": 525
+        },
+        "upperLeft": {
+          "x": 64,
+          "y": 465
+        }
+      },
+      "dockers": []
+    },
+    {
+      "resourceId": "oryx_0A2950AD-91C7-4BB9-8A2A-D175016EACD8",
+      "properties": {
+        "shared": "no",
+        "shareRef": "",
+        "enrich": "no",
+        "enrich_timeout": "",
+        "overrideid": "",
+        "name": "",
+        "documentation": null,
+        "bgcolor": "white",
+        "bordercolor": "#000000",
+        "caption": "",
+        "type_activiti": "Workflow",
+        "uri_template": "activiti:${operation}",
+        "urivalue_operation": "sendMessageEvent",
+        "uriparam_namespace": "-",
+        "uriparam_signalName": "votesignal",
+        "uriparam_messageName": "votemessage",
+        "uriparam_businessKey": "",
+        "uriparam_headerFields": "vote,name",
+        "uriparam_variableNames": "",
+        "uriparam_processCriteria": [],
+        "extraParams": null
+      },
+      "stencil": {
+        "id": "ActivitiEndpoint"
+      },
+      "childShapes": [],
+      "outgoing": [],
+      "bounds": {
+        "lowerRight": {
+          "x": 353.5,
+          "y": 525
+        },
+        "upperLeft": {
+          "x": 273.5,
+          "y": 465
+        }
+      },
+      "dockers": []
+    },
+    {
+      "resourceId": "oryx_ED93319E-81EF-413A-80C2-79D9CD64A010",
+      "properties": {
+        "overrideid": "",
+        "name": "",
+        "documentation": null
+      },
+      "stencil": {
+        "id": "SimpleConnection"
+      },
+      "childShapes": [],
+      "outgoing": [
+        {
+          "resourceId": "oryx_0A2950AD-91C7-4BB9-8A2A-D175016EACD8"
+        }
+      ],
+      "bounds": {
+        "lowerRight": {
+          "x": 273.21875,
+          "y": 495
+        },
+        "upperLeft": {
+          "x": 144.28125,
+          "y": 495
+        }
+      },
+      "dockers": [
+        {
+          "x": 40,
+          "y": 30
+        },
+        {
+          "x": 40,
+          "y": 30
+        }
+      ],
+      "target": {
+        "resourceId": "oryx_0A2950AD-91C7-4BB9-8A2A-D175016EACD8"
+      }
+    },
+    {
+      "resourceId": "oryx_309E5F64-2BEB-4C39-AC83-1D3F14BB2381",
+      "properties": {
+        "shared": "no",
+        "shareRef": "",
+        "enrich": "no",
+        "enrich_timeout": "",
+        "overrideid": "",
+        "name": "",
+        "documentation": "Get voting state:\nparticipants\ndates\nvotes\ntitle\ndescription\nlocation",
+        "bgcolor": "white",
+        "bordercolor": "#000000",
+        "caption": "",
+        "type_direct": "Direct",
+        "uri_template": "direct:${name}",
+        "urivalue_name": "getState",
+        "rpc": true,
+        "rpcParameter": {
+          "totalCount": 1,
+          "items": [
+            {
+              "name": "businessKey",
+              "destname": null,
+              "defaultvalue": null,
+              "optional": false,
+              "type": "string",
+              "destination": "header"
+            }
+          ]
+        },
+        "rpcReturn": "body",
+        "mimetype": "",
+        "rpcReturnHeaders": null,
+        "startableGroups": null,
+        "startableUsers": "guest,admin"
+      },
+      "stencil": {
+        "id": "DirectEndpoint"
+      },
+      "childShapes": [],
+      "outgoing": [
+        {
+          "resourceId": "oryx_45C4BD9D-6BDF-47AA-B995-639D9034ADB7"
+        }
+      ],
+      "bounds": {
+        "lowerRight": {
+          "x": 144,
+          "y": 690
+        },
+        "upperLeft": {
+          "x": 64,
+          "y": 630
+        }
+      },
+      "dockers": []
+    },
+    {
+      "resourceId": "oryx_EB4A902F-328F-4163-897C-5E77B49E38D1",
+      "properties": {
+        "shared": "no",
+        "shareRef": "",
+        "enrich": "no",
+        "enrich_timeout": "",
+        "overrideid": "",
+        "name": "",
+        "documentation": null,
+        "bgcolor": "white",
+        "bordercolor": "#000000",
+        "caption": "",
+        "type_activiti": "Workflow",
+        "uri_template": "activiti:${operation}",
+        "urivalue_operation": "getProcessVariables",
+        "uriparam_namespace": "-",
+        "uriparam_signalName": "votesignal",
+        "uriparam_messageName": "votemessage",
+        "uriparam_businessKey": "",
+        "uriparam_headerFields": "",
+        "uriparam_variableNames": "participants,dates,votes,location,your_name,title,description",
+        "uriparam_processCriteria": [],
+        "extraParams": null
+      },
+      "stencil": {
+        "id": "ActivitiEndpoint"
+      },
+      "childShapes": [],
+      "outgoing": [],
+      "bounds": {
+        "lowerRight": {
+          "x": 353.5,
+          "y": 690
+        },
+        "upperLeft": {
+          "x": 273.5,
+          "y": 630
+        }
+      },
+      "dockers": []
+    },
+    {
+      "resourceId": "oryx_45C4BD9D-6BDF-47AA-B995-639D9034ADB7",
+      "properties": {
+        "overrideid": "",
+        "name": "",
+        "documentation": null
+      },
+      "stencil": {
+        "id": "SimpleConnection"
+      },
+      "childShapes": [],
+      "outgoing": [
+        {
+          "resourceId": "oryx_EB4A902F-328F-4163-897C-5E77B49E38D1"
+        }
+      ],
+      "bounds": {
+        "lowerRight": {
+          "x": 273.21875,
+          "y": 660
+        },
+        "upperLeft": {
+          "x": 144.28125,
+          "y": 660
+        }
+      },
+      "dockers": [
+        {
+          "x": 40,
+          "y": 30
+        },
+        {
+          "x": 40,
+          "y": 30
+        }
+      ],
+      "target": {
+        "resourceId": "oryx_EB4A902F-328F-4163-897C-5E77B49E38D1"
+      }
+    }
+  ],
+  "bounds": {
+    "lowerRight": {
+      "x": 2485,
+      "y": 3050
+    },
+    "upperLeft": {
+      "x": 0,
+      "y": 0
+    }
+  },
+  "stencilset": {
+    "url": "camel",
+    "namespace": "http://b3mn.org/stencilset/camel#"
+  },
+  "ssextensions": [],
+  "zoomLevel": 1
+}
