@@ -33,7 +33,7 @@ image::http://simpldate.ms123.org/repo/simpldate/web/images/simpldate_overview.s
 
 The application requires four rpc`s to interact with the process at the moment.
 The fourth, finish the  process is not ready.
-The Camel component "workflow" implements the  "rpc's".
+The Camel component "workflow" implements the  RPC-Interface.
 
 * Starts the process.
 * Messageevents are sent to the processs.
