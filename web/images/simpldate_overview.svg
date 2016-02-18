@@ -28,7 +28,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -191,9 +191,9 @@
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
-     inkscape:zoom="0.91391941"
-     inkscape:cx="280.39757"
-     inkscape:cy="775.76608"
+     inkscape:zoom="0.95009519"
+     inkscape:cx="682.21271"
+     inkscape:cy="787.8158"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="0"
@@ -234,8 +234,8 @@
      x="24.150879"
      y="812.12378" />
   <path
-     style="fill:none;fill-rule:evenodd;stroke:#607d8b;stroke-width:1.34500003;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow1Lstart-0)"
-     d="M 972.5075,163.39813 C 850.73674,255.24742 851.18833,255.10922 851.18833,255.10922"
+     style="fill:none;fill-rule:evenodd;stroke:#607d8b;stroke-width:1.51561201;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow1Lstart-0)"
+     d="m 966.91608,178.29238 c -149.9393,94.7185 -149.38325,94.57599 -149.38325,94.57599"
      id="path4150-4"
      inkscape:connector-curvature="0" />
   <image
@@ -262,12 +262,12 @@
      id="path11946"
      inkscape:connector-curvature="0" />
   <path
-     style="fill:none;fill-rule:evenodd;stroke:#607d8b;stroke-width:1.34500003;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow1Lstart-0-7)"
-     d="m 946.33171,956.51739 c -151.91293,13.6697 -151.45651,13.791 -151.45651,13.791"
+     style="fill:none;fill-rule:evenodd;stroke:#607d8b;stroke-width:1.25488496;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow1Lstart-0-7)"
+     d="M 924.42325,956.42823 C 794.55138,970.34702 794.94158,970.47054 794.94158,970.47054"
      id="path4150-4-8"
      inkscape:connector-curvature="0"
-     inkscape:transform-center-x="-18.812198"
-     inkscape:transform-center-y="29.43157" />
+     inkscape:transform-center-x="-16.082738"
+     inkscape:transform-center-y="29.967908" />
   <image
      width="325"
      height="114"
@@ -283,8 +283,8 @@
      id="path4150"
      inkscape:connector-curvature="0" />
   <path
-     style="fill:none;fill-rule:evenodd;stroke:#607d8b;stroke-width:1.34500003;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow1Lstart-0-79)"
-     d="m 861.55259,1168.263 c 150.78721,-22.969 150.32421,-23.0621 150.32421,-23.0621"
+     style="fill:none;fill-rule:evenodd;stroke:#607d8b;stroke-width:1.46041381;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow1Lstart-0-79)"
+     d="m 854.45712,1168.1314 c 180.13818,-22.6678 179.58498,-22.7597 179.58498,-22.7597"
      id="path4150-4-2"
      inkscape:connector-curvature="0" />
   <path
@@ -428,15 +428,15 @@
   <ellipse
      style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#ff5252;stroke-width:2;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
      id="path30184"
-     cx="999.54108"
-     cy="960.15015"
+     cx="1001.6461"
+     cy="954.88751"
      rx="74.951904"
      ry="35.561123" />
   <ellipse
      style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#ff5252;stroke-width:2;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
      id="path30189"
-     cx="1105.6774"
-     cy="1128.108"
+     cx="1111.9926"
+     cy="1131.2656"
      rx="81.517036"
      ry="67.839676" />
   <path

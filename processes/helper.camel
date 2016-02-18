@@ -40,7 +40,7 @@
         "documentation": null,
         "bgcolor": "white",
         "bordercolor": "#000000",
-        "caption": "",
+        "caption": "initiate",
         "type_direct": "Direct",
         "uri_template": "direct:${name}",
         "urivalue_name": "initiate",
@@ -83,12 +83,12 @@
       ],
       "bounds": {
         "lowerRight": {
-          "x": 144,
-          "y": 368
+          "x": 170,
+          "y": 207
         },
         "upperLeft": {
-          "x": 64,
-          "y": 308
+          "x": 90,
+          "y": 147
         }
       },
       "dockers": []
@@ -105,7 +105,7 @@
         "documentation": null,
         "bgcolor": "white",
         "bordercolor": "#000000",
-        "caption": "",
+        "caption": "startProcess",
         "type_activiti": "Workflow",
         "uri_template": "activiti:${operation}",
         "urivalue_operation": "startProcess",
@@ -132,12 +132,12 @@
       "outgoing": [],
       "bounds": {
         "lowerRight": {
-          "x": 353.5,
-          "y": 368
+          "x": 379.5,
+          "y": 207
         },
         "upperLeft": {
-          "x": 273.5,
-          "y": 308
+          "x": 299.5,
+          "y": 147
         }
       },
       "dockers": []
@@ -160,12 +160,12 @@
       ],
       "bounds": {
         "lowerRight": {
-          "x": 273.21875,
-          "y": 338
+          "x": 299.21875,
+          "y": 177
         },
         "upperLeft": {
-          "x": 144.28125,
-          "y": 338
+          "x": 170.28125,
+          "y": 177
         }
       },
       "dockers": [
@@ -194,7 +194,7 @@
         "documentation": null,
         "bgcolor": "white",
         "bordercolor": "#000000",
-        "caption": "",
+        "caption": "vote",
         "type_direct": "Direct",
         "uri_template": "direct:${name}",
         "urivalue_name": "vote",
@@ -245,12 +245,12 @@
       ],
       "bounds": {
         "lowerRight": {
-          "x": 144,
-          "y": 525
+          "x": 170,
+          "y": 364
         },
         "upperLeft": {
-          "x": 64,
-          "y": 465
+          "x": 90,
+          "y": 304
         }
       },
       "dockers": []
@@ -267,7 +267,7 @@
         "documentation": null,
         "bgcolor": "white",
         "bordercolor": "#000000",
-        "caption": "",
+        "caption": "send MessageEvent",
         "type_activiti": "Workflow",
         "uri_template": "activiti:${operation}",
         "urivalue_operation": "sendMessageEvent",
@@ -287,12 +287,12 @@
       "outgoing": [],
       "bounds": {
         "lowerRight": {
-          "x": 353.5,
-          "y": 525
+          "x": 379.5,
+          "y": 364
         },
         "upperLeft": {
-          "x": 273.5,
-          "y": 465
+          "x": 299.5,
+          "y": 304
         }
       },
       "dockers": []
@@ -315,12 +315,12 @@
       ],
       "bounds": {
         "lowerRight": {
-          "x": 273.21875,
-          "y": 495
+          "x": 299.21875,
+          "y": 334
         },
         "upperLeft": {
-          "x": 144.28125,
-          "y": 495
+          "x": 170.28125,
+          "y": 334
         }
       },
       "dockers": [
@@ -349,7 +349,7 @@
         "documentation": "Get voting state:\nparticipants\ndates\nvotes\ntitle\ndescription\nlocation",
         "bgcolor": "white",
         "bordercolor": "#000000",
-        "caption": "",
+        "caption": "getState",
         "type_direct": "Direct",
         "uri_template": "direct:${name}",
         "urivalue_name": "getState",
@@ -384,12 +384,12 @@
       ],
       "bounds": {
         "lowerRight": {
-          "x": 144,
-          "y": 690
+          "x": 170,
+          "y": 529
         },
         "upperLeft": {
-          "x": 64,
-          "y": 630
+          "x": 90,
+          "y": 469
         }
       },
       "dockers": []
@@ -406,7 +406,7 @@
         "documentation": null,
         "bgcolor": "white",
         "bordercolor": "#000000",
-        "caption": "",
+        "caption": "get process variables",
         "type_activiti": "Workflow",
         "uri_template": "activiti:${operation}",
         "urivalue_operation": "getProcessVariables",
@@ -426,12 +426,12 @@
       "outgoing": [],
       "bounds": {
         "lowerRight": {
-          "x": 353.5,
-          "y": 690
+          "x": 379.5,
+          "y": 529
         },
         "upperLeft": {
-          "x": 273.5,
-          "y": 630
+          "x": 299.5,
+          "y": 469
         }
       },
       "dockers": []
@@ -454,12 +454,12 @@
       ],
       "bounds": {
         "lowerRight": {
-          "x": 273.21875,
-          "y": 660
+          "x": 299.21875,
+          "y": 499
         },
         "upperLeft": {
-          "x": 144.28125,
-          "y": 660
+          "x": 170.28125,
+          "y": 499
         }
       },
       "dockers": [
@@ -492,5 +492,5 @@
     "namespace": "http://b3mn.org/stencilset/camel#"
   },
   "ssextensions": [],
-  "zoomLevel": 1
+  "zoomLevel": 1.4641000000000006
 }
