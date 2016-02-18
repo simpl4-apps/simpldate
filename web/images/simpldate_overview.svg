@@ -192,7 +192,7 @@
      fit-margin-right="0"
      fit-margin-bottom="0"
      inkscape:zoom="0.95009519"
-     inkscape:cx="414.87108"
+     inkscape:cx="147.52945"
      inkscape:cy="829.91684"
      inkscape:window-x="0"
      inkscape:window-y="0"
@@ -459,14 +459,18 @@
        sodipodi:role="line"
        id="tspan38231"
        x="519.7395"
-       y="1371.0179">This components</tspan><tspan
+       y="1371.0179">The components</tspan><tspan
        sodipodi:role="line"
        x="519.7395"
        y="1389.0179"
-       id="tspan38233">receives the call</tspan><tspan
+       id="tspan4260">with the socket</tspan><tspan
        sodipodi:role="line"
        x="519.7395"
        y="1407.0179"
+       id="tspan38233">receives the call</tspan><tspan
+       sodipodi:role="line"
+       x="519.7395"
+       y="1425.0179"
        id="tspan38245">from the browser.</tspan></text>
   <text
      xml:space="preserve"
@@ -482,14 +486,18 @@
        sodipodi:role="line"
        x="727.67688"
        y="1390.9146"
-       id="tspan38239">communicates</tspan><tspan
+       id="tspan4262">with the gear</tspan><tspan
        sodipodi:role="line"
        x="727.67688"
        y="1408.9146"
-       id="tspan38243">with the process-engine</tspan><tspan
+       id="tspan38239">communicates</tspan><tspan
        sodipodi:role="line"
        x="727.67688"
        y="1426.9146"
+       id="tspan38243">with the process-engine.</tspan><tspan
+       sodipodi:role="line"
+       x="727.67688"
+       y="1444.9146"
        id="tspan38241" /></text>
   <text
      xml:space="preserve"
@@ -505,7 +513,7 @@
        sodipodi:role="line"
        x="125.83166"
        y="1474.3646"
-       id="tspan38251">is send via RPC to the browser</tspan></text>
+       id="tspan38251">is send via RPC to the backend.</tspan></text>
   <ellipse
      style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#44b118;stroke-width:2;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
      id="path38529"
@@ -514,24 +522,24 @@
      rx="191.48297"
      ry="66.745491" />
   <rect
-     style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#607d8b;stroke-width:2;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+     style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#607d8b;stroke-width:2.01540089;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
      id="rect4431"
-     width="332.59827"
-     height="49.468727"
-     x="119.98798"
-     y="1436.698" />
+     width="337.84549"
+     height="49.453327"
+     x="119.99568"
+     y="1436.7057" />
   <rect
-     style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#607d8b;stroke-width:2;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+     style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#607d8b;stroke-width:2.22196293;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
      id="rect4433"
-     width="198.92743"
-     height="70.519249"
-     x="510.47516"
-     y="1347.2333" />
+     width="198.70546"
+     height="87.137703"
+     x="510.58615"
+     y="1347.3442" />
   <rect
-     style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#607d8b;stroke-width:1.74844801;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+     style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#607d8b;stroke-width:1.90650117;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
      id="rect4435"
-     width="240.22749"
-     height="73.928383"
-     x="722.95972"
-     y="1349.2126" />
+     width="256.90988"
+     height="82.190544"
+     x="717.77612"
+     y="1353.5018" />
 </svg>
