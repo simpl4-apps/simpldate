@@ -192,8 +192,8 @@
      fit-margin-right="0"
      fit-margin-bottom="0"
      inkscape:zoom="0.95009519"
-     inkscape:cx="414.87108"
-     inkscape:cy="829.91684"
+     inkscape:cx="682.21271"
+     inkscape:cy="787.8158"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="0"
@@ -348,7 +348,7 @@
        sodipodi:role="line"
        id="tspan30116"
        x="600.70941"
-       y="178.35265">routing engine</tspan></text>
+       y="178.35265">routing-engine</tspan></text>
   <rect
      style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.39999998;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
      id="rect30137"
@@ -515,7 +515,7 @@
        sodipodi:role="line"
        x="125.83166"
        y="1474.3646"
-       id="tspan38251">is send via RPC to the browser</tspan></text>
+       id="tspan38251">is send via RPC to the backend</tspan></text>
   <ellipse
      style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#44b118;stroke-width:2;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
      id="path38529"
