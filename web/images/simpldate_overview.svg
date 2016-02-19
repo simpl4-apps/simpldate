@@ -395,13 +395,13 @@
        x="634.62921"
        y="48.142578">Backend</tspan></text>
   <rect
-     style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#607d8b;stroke-width:2.10717201;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+     style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#607d8b;stroke-width:2.12782669;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
      id="rect30176"
-     width="313.92493"
-     height="60.073181"
-     x="518.69885"
-     y="458.51834"
-     ry="12.630314" />
+     width="320.21942"
+     height="60.052525"
+     x="518.70917"
+     y="458.52866"
+     ry="12.625971" />
   <ellipse
      style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#ec7d18;stroke-width:1.46425331;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
      id="path30178"
@@ -457,14 +457,18 @@
        sodipodi:role="line"
        id="tspan38231"
        x="519.7395"
-       y="1371.0179">This components</tspan><tspan
+       y="1371.0179">The components</tspan><tspan
        sodipodi:role="line"
        x="519.7395"
        y="1389.0179"
-       id="tspan38233">receives the call</tspan><tspan
+       id="tspan4523">with the socket</tspan><tspan
        sodipodi:role="line"
        x="519.7395"
        y="1407.0179"
+       id="tspan38233">receives the call</tspan><tspan
+       sodipodi:role="line"
+       x="519.7395"
+       y="1425.0179"
        id="tspan38245">from the browser.</tspan></text>
   <text
      xml:space="preserve"
@@ -476,18 +480,26 @@
        sodipodi:role="line"
        id="tspan38237"
        x="727.67688"
-       y="1372.9146">This components</tspan><tspan
+       y="1372.9146">The components</tspan><tspan
        sodipodi:role="line"
        x="727.67688"
        y="1390.9146"
-       id="tspan38239">communicates</tspan><tspan
+       id="tspan4525">with the gear</tspan><tspan
        sodipodi:role="line"
        x="727.67688"
        y="1408.9146"
-       id="tspan38243">with the process-engine</tspan><tspan
+       id="tspan38239">communicates</tspan><tspan
        sodipodi:role="line"
        x="727.67688"
        y="1426.9146"
+       id="tspan38243">with the </tspan><tspan
+       sodipodi:role="line"
+       x="727.67688"
+       y="1444.9146"
+       id="tspan4530">process-engine</tspan><tspan
+       sodipodi:role="line"
+       x="727.67688"
+       y="1462.9146"
        id="tspan38241" /></text>
   <text
      xml:space="preserve"
@@ -512,27 +524,31 @@
      rx="191.48297"
      ry="66.745491" />
   <rect
-     style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#607d8b;stroke-width:2;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+     style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#607d8b;stroke-width:2.02763247;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
      id="rect4431"
-     width="332.59827"
-     height="49.468727"
-     x="119.98798"
-     y="1436.698"
-     ry="12.630314" />
+     width="342.04337"
+     height="49.441093"
+     x="120.0018"
+     y="1436.7118"
+     ry="12.623259" />
+  <g
+     id="g4527"
+     transform="translate(-6.3151574,-1.0525262)">
+    <rect
+       ry="26.321575"
+       y="1347.3508"
+       x="510.59271"
+       height="88.177094"
+       width="198.69232"
+       id="rect4433"
+       style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#607d8b;stroke-width:2.23510146;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+  </g>
   <rect
-     style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#607d8b;stroke-width:2;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-     id="rect4433"
-     width="198.92743"
-     height="70.519249"
-     x="510.47516"
-     y="1347.2333"
-     ry="21.050566" />
-  <rect
-     style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#607d8b;stroke-width:1.74844801;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+     style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#607d8b;stroke-width:1.95701945;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
      id="rect4435"
-     width="240.22749"
-     height="73.928383"
-     x="722.95972"
-     y="1349.2126"
-     ry="16.840462" />
+     width="203.1805"
+     height="109.50571"
+     x="712.53876"
+     y="1350.3694"
+     ry="24.944769" />
 </svg>
