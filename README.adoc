@@ -1,7 +1,7 @@
 :linkattrs:
 :source-highlighter: rouge
 
-image::web/images/logoneu.png[link="http://simpl4.org"[window="_blank"]]
+image::web/images/logoneu.png[link="http://simpl4.org"]
 
 ==== simpldate(schedule meetings) ====
 
