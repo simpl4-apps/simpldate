@@ -6,6 +6,7 @@
 
 === Overview ===
 
+==== link:http://simpldate.ms123.org/repo/simpldate/start.html[Demo,window="_blank"] ====
 
 ==== The main aspects ====
 
