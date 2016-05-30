@@ -13,6 +13,7 @@
     "author": "",
     "creationdate": null,
     "modificationdate": null,
+    "settings": null,
     "rpc": false,
     "rpcParameter": null,
     "rpcReturn": "body",
@@ -21,8 +22,7 @@
     "recvEndpoint": "",
     "sendEndpoint": "",
     "startableGroups": null,
-    "startableUsers": null,
-    "settings": null
+    "startableUsers": null
   },
   "stencil": {
     "id": "Camelrouting"
@@ -114,7 +114,8 @@
         "uriparam_signalName": "",
         "uriparam_sendMessage": true,
         "uriparam_messageName": "votemessage",
-        "uriparam_businessKey": "",
+        "uriparam_businessKey": "h.businessKey",
+        "uriparam_events": null,
         "uriparam_headerFields": "initiateData",
         "uriparam_variableNames": "",
         "uriparam_processCriteria": [
@@ -274,7 +275,8 @@
         "uriparam_namespace": "-",
         "uriparam_signalName": "votesignal",
         "uriparam_messageName": "votemessage",
-        "uriparam_businessKey": "",
+        "uriparam_businessKey": "h.businessKey",
+        "uriparam_events": null,
         "uriparam_headerFields": "vote,name",
         "uriparam_variableNames": "",
         "uriparam_processCriteria": [],
@@ -413,7 +415,8 @@
         "uriparam_namespace": "-",
         "uriparam_signalName": "votesignal",
         "uriparam_messageName": "votemessage",
-        "uriparam_businessKey": "",
+        "uriparam_businessKey": "h.businessKey",
+        "uriparam_events": null,
         "uriparam_headerFields": "",
         "uriparam_variableNames": "participants,dates,votes,location,your_name,title,description",
         "uriparam_processCriteria": [],
@@ -492,5 +495,5 @@
     "namespace": "http://b3mn.org/stencilset/camel#"
   },
   "ssextensions": [],
-  "zoomLevel": 1.4641000000000006
+  "zoomLevel": 1.2100000000000002
 }
